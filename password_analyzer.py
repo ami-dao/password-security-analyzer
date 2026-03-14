@@ -307,3 +307,6 @@ def main() -> None:
         return
 
     analyze_password(password)
+
+if __name__ == "__main__":
+    main()
