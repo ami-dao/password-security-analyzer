@@ -292,14 +292,18 @@ def analyze_password(password: str) -> None:
 def main() -> None:
     print("Password Security Analyzer")
     print("--------------------------")
-    password = getpass.getpass("Enter a password to analyze: ")
+    print("1. Hidden input")
+    print("2. Visible input")
+
+    choice = input("Choose input mode (1/2): ").strip()
+
+    if choice == "2":
+        password = input("Enter a password to analyze: ")
+    else:
+        password = getpass.getpass("Enter a password to analyze: ")
 
     if not password:
         print("No password entered.")
         return
 
     analyze_password(password)
-
-
-if __name__ == "__main__":
-    main()
